@@ -2,8 +2,8 @@ import pandas as pd
 import streamlit as st
 import pickle as pkl
 import os
-pip install bz2file
-import bz2file as bz2
+# pip install bz2file
+# import bz2file as bz2
 
 #os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
 from PIL import Image
@@ -19,19 +19,19 @@ background-size: cover;
 st.markdown(image, unsafe_allow_html=True)
 
 
-def decompress_pickle(file):
-    data=bz2.BZ2File(file,'rb')
-    data=pkl.load(data)
-    return data
+# def decompress_pickle(file):
+#     data=bz2.BZ2File(file,'rb')
+#     data=pkl.load(data)
+#     return data
 
 # AdaBoostClassifier=pkl.load(open('AdaBoostClassifier','rb'))
-# LogisticRegression=pkl.load(open('LogisticRegression','rb'))
+LogisticRegression=pkl.load(open('LogisticRegression','rb'))
 # RFClassifier=pkl.load(open('RFClassifier','rb'))
 # VotingClassifier=pkl.load(open('VotingClassifier','rb'))
 
 #AdaBoostClassifier=decompress_pickle('AdaCompressed.pbz2')
-LogisticRegression=decompress_pickle('LORCompressed.pbz2')
-RFClassifier=decompress_pickle('RFCompressed.pbz2')
+#LogisticRegression=decompress_pickle('LORCompressed.pbz2')
+#RFClassifier=decompress_pickle('RFCompressed.pbz2')
 #VotingClassifier=decompress_pickle('VotCompressed.pbz2')
 
 
@@ -306,29 +306,29 @@ if predict_button2:
         st.success('This customer will not SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba)) 
     
 
-predictionUsingRF= RFClassifier.predict([[selected_age,selected_job, selected_marital, 
-                                  selected_education,selected_default, selected_balance,  
-                                  selected_housing, selected_loan,selected_contact, 
-                                  selected_day, selected_month,selected_duration,selected_campaign, 
-                                  selected_pdays,selected_previous ,selected_poutcome 
-                                  ]])
+# predictionUsingRF= RFClassifier.predict([[selected_age,selected_job, selected_marital, 
+#                                   selected_education,selected_default, selected_balance,  
+#                                   selected_housing, selected_loan,selected_contact, 
+#                                   selected_day, selected_month,selected_duration,selected_campaign, 
+#                                   selected_pdays,selected_previous ,selected_poutcome 
+#                                   ]])
 
 
-proba=round((RFClassifier.predict_proba([[selected_age,selected_job, selected_marital, 
-                                  selected_education,selected_default, selected_balance,  
-                                  selected_housing, selected_loan,selected_contact, 
-                                  selected_day, selected_month,selected_duration,selected_campaign, 
-                                  selected_pdays,selected_previous ,selected_poutcome
-                                  ]])[0][1])*100,2)
+# proba=round((RFClassifier.predict_proba([[selected_age,selected_job, selected_marital, 
+#                                   selected_education,selected_default, selected_balance,  
+#                                   selected_housing, selected_loan,selected_contact, 
+#                                   selected_day, selected_month,selected_duration,selected_campaign, 
+#                                   selected_pdays,selected_previous ,selected_poutcome
+#                                   ]])[0][1])*100,2)
 
-# # # Adding Predict Button
-predict_button3 = st.button('Predict using Random Forest')
-# st.write(predict_button)
-if predict_button3:
-    if(predictionUsingRF == 1):
-        st.success('This customer will SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba))
-    else:
-        st.success('This customer will not SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba)) 
+# # # # Adding Predict Button
+# predict_button3 = st.button('Predict using Random Forest')
+# # st.write(predict_button)
+# if predict_button3:
+#     if(predictionUsingRF == 1):
+#         st.success('This customer will SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba))
+#     else:
+#         st.success('This customer will not SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba)) 
 
 
 # predictionUsingAda= AdaBoostClassifier.predict([[selected_age,selected_job, selected_marital, 
