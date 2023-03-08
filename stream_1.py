@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import pickle as pkl
 import os
-os.path.join("")
+os.path.join(r"Utkarshmavi0406/desktop-tutorial/")
 # os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
 # pip install bz2file
 # import bz2file as bz2
