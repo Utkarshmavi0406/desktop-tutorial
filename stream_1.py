@@ -1,15 +1,13 @@
 import pandas as pd
 import streamlit as st
 import pickle as pkl
-import os
-import sklearn
-os.path.join(r"Utkarshmavi0406/desktop-tutorial/")
 # os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
 # pip install bz2file
 # import bz2file as bz2
 # from git import Repo
 
 from PIL import Image
+
 
 
 image = '''
@@ -28,8 +26,8 @@ st.markdown(image, unsafe_allow_html=True)
 #     return data
 
 # AdaBoostClassifier=pkl.load(open('AdaBoostClassifier','rb'))
-LogisticRegression=pkl.load(open('LogisticRegression','rb'))
-RFClassifier=pkl.load(open('RFClassifier','rb'))
+LogisticRegression=pkl.load(open('./LogisticRegression','rb'))
+RFClassifier=pkl.load(open('./RFClassifier','rb'))
 # VotingClassifier=pkl.load(open('VotingClassifier','rb'))
 
 #AdaBoostClassifier=decompress_pickle('AdaCompressed.pbz2')
@@ -39,7 +37,7 @@ RFClassifier=pkl.load(open('RFClassifier','rb'))
 
 
 # st.image(image, caption='Term Deposit')https://github.com/Utkarshmavi0406/desktop-tutorial/blob/main/stream_1.py
-df=pd.read_csv("file1.csv")
+df=pd.read_csv("./file1.csv")
 
 # Title of the page
 st.title("Deposit Prediction for Bank Marketing Campaign")
