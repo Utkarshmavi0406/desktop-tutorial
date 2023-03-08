@@ -4,8 +4,8 @@ import pickle as pkl
 import os
 # pip install bz2file
 # import bz2file as bz2
-
-#os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
+from git import Repo
+Repo("git@github.com:Utkarshmavi0406/desktop-tutorial.git")
 from PIL import Image
 
 
