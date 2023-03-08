@@ -27,10 +27,10 @@ def decompress_pickle(file):
 # RFClassifier=pkl.load(open('RFClassifier','rb'))
 # VotingClassifier=pkl.load(open('VotingClassifier','rb'))
 
-AdaBoostClassifier=decompress_pickle('AdaCompressed.pbz2')
+#AdaBoostClassifier=decompress_pickle('AdaCompressed.pbz2')
 LogisticRegression=decompress_pickle('LORCompressed.pbz2')
 RFClassifier=decompress_pickle('RFCompressed.pbz2')
-VotingClassifier=decompress_pickle('VotCompressed.pbz2')
+#VotingClassifier=decompress_pickle('VotCompressed.pbz2')
 
 
 # st.image(image, caption='Term Deposit')
@@ -255,62 +255,78 @@ st.subheader("Now, we will predict whether customer will buy it or not.")
 # RFClassifier=pkl.load(open('RFClassifier','rb'))
 # VotingClassifier=pkl.load(open('VotingClassifier','rb'))
 
-predictionUsingVC= VotingClassifier.predict([[selected_age,selected_job, selected_marital, 
-                                  selected_education,selected_default, selected_balance,  
-                                  selected_housing, selected_loan,selected_contact, 
-                                  selected_day, selected_month,selected_duration,selected_campaign, 
-                                  selected_pdays,selected_previous ,selected_poutcome 
-                                  ]])
-
-proba=round((VotingClassifier.predict_proba([[selected_age,selected_job, selected_marital, 
-                                  selected_education,selected_default, selected_balance,  
-                                  selected_housing, selected_loan,selected_contact, 
-                                  selected_day, selected_month,selected_duration,selected_campaign, 
-                                  selected_pdays,selected_previous ,selected_poutcome
-                                  ]])[0][1])*100,2)
-# # Adding Predict Button
-# st.write(predict_button)
-predict_button = st.button('Predict using Voting Classifier')
-
-if predict_button:
-    if(predictionUsingVC == 1):
-        st.success('This customer will SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba))
-    else:
-        st.success('This customer will NOT SUBSCRIBE Term Deposit with probability percentage :{}'.format(proba))
-
-
-# predictionUsingLR= LogisticRegression.predict([[selected_age,selected_job, selected_marital, 
-#                                   selected_education,selected_default, selected_balance,  
-#                                   selected_housing, selected_loan,selected_contact, 
-#                                   selected_day, selected_month,selected_duration,selected_campaign, 
-#                                   selected_pdays,selected_previous ,selected_poutcome 
-#                                    ]])
-# # Adding Predict Button
-# predict_button2 = st.button('Predict using Logistic Regression')
-# # st.write(predict_button2)
-# if predict_button2:
-#     if(predictionUsingLR == 1):
-#         st.success('This customer segment will Deposit')
-#     else:
-#         st.success('This customer segment will NOT Deposit') 
-    
-
-# predictionUsingRF= RFClassifier.predict([[selected_age,selected_job, selected_marital, 
+# predictionUsingVC= VotingClassifier.predict([[selected_age,selected_job, selected_marital, 
 #                                   selected_education,selected_default, selected_balance,  
 #                                   selected_housing, selected_loan,selected_contact, 
 #                                   selected_day, selected_month,selected_duration,selected_campaign, 
 #                                   selected_pdays,selected_previous ,selected_poutcome 
 #                                   ]])
 
+# proba=round((VotingClassifier.predict_proba([[selected_age,selected_job, selected_marital, 
+#                                   selected_education,selected_default, selected_balance,  
+#                                   selected_housing, selected_loan,selected_contact, 
+#                                   selected_day, selected_month,selected_duration,selected_campaign, 
+#                                   selected_pdays,selected_previous ,selected_poutcome
+#                                   ]])[0][1])*100,2)
+# # # Adding Predict Button
+# # st.write(predict_button)
+# predict_button = st.button('Predict using Voting Classifier')
+
+# if predict_button:
+#     if(predictionUsingVC == 1):
+#         st.success('This customer will SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba))
+#     else:
+#         st.success('This customer will NOT SUBSCRIBE Term Deposit with probability percentage :{}'.format(proba))
+
+
+predictionUsingLR= LogisticRegression.predict([[selected_age,selected_job, selected_marital, 
+                                  selected_education,selected_default, selected_balance,  
+                                  selected_housing, selected_loan,selected_contact, 
+                                  selected_day, selected_month,selected_duration,selected_campaign, 
+                                  selected_pdays,selected_previous ,selected_poutcome 
+                                   ]])
+
+proba=round((LogisticRegression.predict_proba([[selected_age,selected_job, selected_marital, 
+                                  selected_education,selected_default, selected_balance,  
+                                  selected_housing, selected_loan,selected_contact, 
+                                  selected_day, selected_month,selected_duration,selected_campaign, 
+                                  selected_pdays,selected_previous ,selected_poutcome
+                                  ]])[0][1])*100,2)
+
+
+# # Adding Predict Button
+predict_button2 = st.button('Predict using Logistic Regression')
+# st.write(predict_button2)
+if predict_button2:
+    if(predictionUsingLR == 1):
+        st.success('This customer will SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba))
+    else:
+        st.success('This customer will not SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba)) 
+    
+
+predictionUsingRF= RFClassifier.predict([[selected_age,selected_job, selected_marital, 
+                                  selected_education,selected_default, selected_balance,  
+                                  selected_housing, selected_loan,selected_contact, 
+                                  selected_day, selected_month,selected_duration,selected_campaign, 
+                                  selected_pdays,selected_previous ,selected_poutcome 
+                                  ]])
+
+
+proba=round((RFClassifier.predict_proba([[selected_age,selected_job, selected_marital, 
+                                  selected_education,selected_default, selected_balance,  
+                                  selected_housing, selected_loan,selected_contact, 
+                                  selected_day, selected_month,selected_duration,selected_campaign, 
+                                  selected_pdays,selected_previous ,selected_poutcome
+                                  ]])[0][1])*100,2)
 
 # # # Adding Predict Button
-# predict_button3 = st.button('Predict using Random Forest')
-# # st.write(predict_button)
-# if predict_button3:
-#     if(predictionUsingRF == 1):
-#         st.success('This customer segment will Deposit')
-#     else:
-#         st.success('This customer segment will NOT Deposit') 
+predict_button3 = st.button('Predict using Random Forest')
+# st.write(predict_button)
+if predict_button3:
+    if(predictionUsingRF == 1):
+        st.success('This customer will SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba))
+    else:
+        st.success('This customer will not SUBSCRIBE Term Deposit with probability percentage {}: '.format(proba)) 
 
 
 # predictionUsingAda= AdaBoostClassifier.predict([[selected_age,selected_job, selected_marital, 
