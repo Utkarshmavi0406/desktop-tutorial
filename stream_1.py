@@ -3,7 +3,7 @@ import streamlit as st
 import pickle as pkl
 import os
 import bz2file as bz2
-os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
+#os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
 from PIL import Image
 
 
