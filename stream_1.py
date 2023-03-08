@@ -126,7 +126,7 @@ selected_default = encode_default(selected_default)
 # selecting balance
 # User can enter the balance here, Balance can also be negative if the user has a loan
 st.subheader("Select Customer's Balance")
-selected_balance = st.number_input("Enter your Balance",step=1)
+selected_balance = st.number_input("Enter your Balance",step=1.00)
 st.write("Selected Customer Balance", selected_balance)   
 
 
