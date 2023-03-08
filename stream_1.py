@@ -36,7 +36,7 @@ RFClassifier=pkl.load(open('RFClassifier','rb'))
 #VotingClassifier=decompress_pickle('VotCompressed.pbz2')
 
 
-# st.image(image, caption='Term Deposit')
+# st.image(image, caption='Term Deposit')https://github.com/Utkarshmavi0406/desktop-tutorial/blob/main/stream_1.py
 df=pd.read_csv("file1.csv")
 
 # Title of the page
