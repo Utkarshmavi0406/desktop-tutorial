@@ -2,10 +2,11 @@ import pandas as pd
 import streamlit as st
 import pickle as pkl
 import os
+os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
 # pip install bz2file
 # import bz2file as bz2
 # from git import Repo
-# Repo("git@github.com:Utkarshmavi0406/desktop-tutorial.git")
+
 from PIL import Image
 
 
