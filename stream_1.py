@@ -187,7 +187,7 @@ selected_contact = encode_contact(selected_contact)
 # User will enter the day of the month on which he was called
 
 st.subheader('Select day')
-selected_day = st.number_input('Select Day:',step=1)
+selected_day = st.number_input('Select Day:',step=1.00)
 st.write('You selected:', selected_day)
 
 # Making a radio button to select a single value from the month column
@@ -210,26 +210,26 @@ selected_month = encode_month(selected_month)
 # Taking input of call duration in seconds from the user
 # selecting duration
 st.subheader("Select Customer's Call Duration ")
-selected_duration = st.number_input('Enter Customer Call Duration in seconds',step=1)
+selected_duration = st.number_input('Enter Customer Call Duration in seconds',step=1.00)
 st.write("Selected Customer Duration", selected_duration)
 
 # Taking input of number of contacts made during the campaign from the user
 # selecting campaign
 st.subheader('Select Number of Contacts Performed in this Campaign')
-selected_campaign = st.number_input('Select Campaign:',step=1)
+selected_campaign = st.number_input('Select Campaign:',step=1.00)
 st.write('You selected:', selected_campaign)
 
 # Taking input of Number of Days Before the Customer was Contacted from the user
 # selecting pdays
 st.subheader('Select Number of Days Before the Customer was Contacted')
-selected_pdays = st.number_input('Select pdays:',step=1)
+selected_pdays = st.number_input('Select pdays:',step=1.00)
 st.write('You selected:', selected_pdays)
 
 
 # Taking input of Number of Contacts Performed Before this Campaign from the user
 # selecting previous
 st.subheader('Select Number of Contacts Performed Before this Campaign')
-selected_previous = st.number_input('Select previous:',step=1)
+selected_previous = st.number_input('Select previous:',step=1.00)
 st.write('You selected:', selected_previous)
 
 
