@@ -13,7 +13,7 @@ from PIL import Image
 image = '''
 <style>
 [data-testid='stAppViewContainer']{
-background-image: url('https://www.gettyimages.in/photos/term-deposit');
+background-image: url('https://www.apnabank.co.in/uploads/products/1411737727term-deposit_lg.jpg');
 background-size: cover;
 }
 '''
