@@ -327,9 +327,9 @@ predict_button3 = st.button('Predict using Random Forest')
 # st.write(predict_button)
 if predict_button3:
     if(predictionUsingRF == 1):
-        st.success('This customer will subscribe to the Term Deposit with percentage {}: '.format(proba))
+        st.success('This customer will subscribe to the Term Deposit and percentage of subscribing is  {}% '.format(proba))
     else:
-        st.success('This customer will not subscribe to thr Term Deposit and probability percentage of subscribing is {}: '.format(proba)) 
+        st.success('This customer will not subscribe to the Term Deposit and percentage of subscribing is {}% '.format(proba)) 
 
 
 # predictionUsingAda= AdaBoostClassifier.predict([[selected_age,selected_job, selected_marital, 
