@@ -13,7 +13,7 @@ from PIL import Image
 image = '''
 <style>
 [data-testid='stAppViewContainer']{
-background-image: url('');
+background-image: url('https://www.gettyimages.in/photos/term-deposit');
 background-size: cover;
 }
 '''
