@@ -1,23 +1,35 @@
 import pandas as pd
 import streamlit as st
 import pickle as pkl
+
+# Add a custom CSS file to your Streamlit app.
+def add_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+add_css("./style.css")
+
+
+
+
+
 # os.chdir(r"C:\Users\utkar\OneDrive\Desktop\Project")
 # pip install bz2file
 # import bz2file as bz2
 # from git import Repo
 
-from PIL import Image
+# from PIL import Image
 
 
 
-image = '''
-<style>
-[data-testid='stAppViewContainer']{
-background-image: url('https://www.apnabank.co.in/uploads/products/1411737727term-deposit_lg.jpg');
-background-size: cover;
-}
-'''
-st.markdown(image, unsafe_allow_html=True)
+# image = '''
+# <style>
+# [data-testid='stAppViewContainer']{
+# background-image: url('https://www.apnabank.co.in/uploads/products/1411737727term-deposit_lg.jpg');
+# background-size: cover;
+# }
+# '''
+# st.markdown(image, unsafe_allow_html=True)
 
 
 # def decompress_pickle(file):
