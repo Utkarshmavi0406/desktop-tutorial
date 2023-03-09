@@ -26,10 +26,7 @@ st.markdown(image, unsafe_allow_html=True)
 #     return data
 
 # AdaBoostClassifier=pkl.load(open('AdaBoostClassifier','rb'))
-@st.cache_resource
 LogisticRegression=pkl.load(open('./LogisticRegression','rb'))
-
-@st.cache_resource
 RFClassifier=pkl.load(open('./RFClassifier','rb'))
 # VotingClassifier=pkl.load(open('VotingClassifier','rb'))
 
@@ -40,7 +37,6 @@ RFClassifier=pkl.load(open('./RFClassifier','rb'))
 
 
 # st.image(image, caption='Term Deposit')https://github.com/Utkarshmavi0406/desktop-tutorial/blob/main/stream_1.py
-@st.cache_data
 df=pd.read_csv("./file1.csv")
 
 # Title of the page
